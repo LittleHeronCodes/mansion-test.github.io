@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">결과 입력</label>
+		<input id="tab-2" type="radio" name="tab" class="ending"><label for="tab-2" class="tab">엔딩</label>
+		<input id="tab-3" type="radio" name="tab" class="sign-up"><label for="tab-3" class="tab">점수판</label>
+		
+		<!-- 결과 입력 탭 -->
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">강의식 범인 지목</label>
+					<input name="mur1" type="radio" value="참새" /><span class="conts">참새</span>
+					<input name="mur1" type="radio" value="해님" /><span class="conts">해님</span>
+					<input name="mur1" type="radio" value="류영" /><span class="conts">류영</span>
+					<input name="mur1" type="radio" value="박승찬" /><span class="conts">박승찬</span>
+					<input name="mur1" type="radio" value="박문" /><span class="conts">박문</span>
+				</div>
+				<div class="group">
+					<label for="user" class="label">박문 범인 지목</label>
+					<input name="mur2" type="radio" value="참새" /><span class="conts">참새</span>
+					<input name="mur2" type="radio" value="해님" /><span class="conts">해님</span>
+					<input name="mur2" type="radio" value="류영" /><span class="conts">류영</span>
+					<input name="mur2" type="radio" value="박승찬" /><span class="conts">박승찬</span>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">류영 정체 발각 여부</label>
+					<input name="ryu_ident" type="radio" value="예" /><span class="conts">예</span>
+					<input name="ryu_ident" type="radio" value="아니오" /><span class="conts">아니오</span>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">죽은 사람</label>
+					<input name="dead" type="radio" value="참새" /><span class="conts">참새</span>
+					<input name="dead" type="radio" value="해님" /><span class="conts">해님</span>
+					<input name="dead" type="radio" value="류영" /><span class="conts">류영</span>
+					<input name="dead" type="radio" value="박승찬" /><span class="conts">박승찬</span>
+					<input name="dead" type="radio" value="없음" /><span class="conts">없음</span>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">(참새) 코드 입력</label>
+					<input id="seo_coin" type="password" class="input" placeholder="(참새) 코드입력">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">(해님) 코드 입력</label>
+					<input id="lee_coin" type="password" class="input" placeholder="(해님) 코드입력">
+				</div>
+				<div class="group">
+					<label class="button" type="submit" onclick="GetEnding()" for="tab-2">입력</label>
+					<!-- TODO check inputs, 지목, 발각 등 선택되지 않으면 안 넘어가게 -->
+				</div>
+				<br>
+			</div>
+			
+			<!-- 엔딩 탭 -->
+			<div class="ending-htm">
+				<div class="group">
+					<span class="span" id="ending_script">_____</span>
+					<!-- <span class="span" id="ending_script" style="overflow-y:scroll;">_____</span> -->
+				</div>
+				<div class="group">
+					<label class="button" type="submit" for="tab-3">점수보기</label>
+				</div>
+			</div>
+			
+			<!-- 점수판 -->
+			<div class="sign-up-htm">
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>류영</td>
+							<td><span id="ryu_score"></span></td>
+						</tr>
+						<tr>
+							<td>박승찬</td>
+							<td><span id="park_score"></span></td>
+						</tr>
+						<tr>
+							<td>해님</td>
+							<td><span id="lee_score"></span></td>
+						</tr>
+						<tr>
+							<td>참새</td>
+							<td><span id="seo_score"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
